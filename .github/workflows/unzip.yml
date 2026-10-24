@@ -1,0 +1,20 @@
+name: Decompresser le zip
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  unzip:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          unzip -o dynamic-island-pc.zip
+          rm -rf dynamic-island-pc/.github
+          cp -a dynamic-island-pc/. .
+          rm -rf dynamic-island-pc dynamic-island-pc.zip
+      - run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add -A
+          git commit -m "Ajout du projet"
+          git push
