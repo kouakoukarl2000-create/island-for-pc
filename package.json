@@ -1,0 +1,22 @@
+{
+  "name": "dynamic-island-pc",
+  "version": "1.0.0",
+  "description": "Une Dynamic Island pour Windows : une bulle descend, devient une pilule pendant la tâche, puis redevient une boule et remonte.",
+  "main": "src/main.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win --publish never"
+  },
+  "devDependencies": {
+    "electron": "^31.7.7",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.example.dynamicislandpc",
+    "productName": "Dynamic Island PC",
+    "files": ["src/**/*", "assets/**/*", "package.json"],
+    "win": { "target": "nsis", "icon": "assets/icon-pc.ico" },
+    "nsis": { "oneClick": true, "perMachine": false }
+  }
+}

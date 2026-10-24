@@ -1,0 +1,27 @@
+html,body{margin:0;height:100%;background:transparent;overflow:hidden;user-select:none}
+body{font:14px/1.4 "Segoe UI Variable","Segoe UI",system-ui,sans-serif}
+.isl{position:fixed;top:10px;left:50%;width:16px;height:16px;border-radius:26px;background:#000;overflow:hidden;pointer-events:none;
+ box-shadow:0 0 0 1px rgba(255,255,255,.08),0 10px 30px rgba(0,0,0,.35);
+ transform:translate(-50%,-70px) scale(.5);opacity:0;
+ transition:width .6s cubic-bezier(.34,1.45,.5,1),height .6s cubic-bezier(.34,1.45,.5,1),transform .55s cubic-bezier(.3,1.35,.5,1),opacity .25s}
+.isl.on{transform:translate(-50%,0) scale(1);opacity:1}
+.isl.live{pointer-events:auto;cursor:pointer}
+.isl.up{transition:width .6s cubic-bezier(.34,1.45,.5,1),height .6s cubic-bezier(.34,1.45,.5,1),transform .5s cubic-bezier(.55,0,.8,.3),opacity .4s .1s}
+#in{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);white-space:nowrap;display:flex;align-items:center;gap:12px;color:#fff;opacity:0;transition:opacity .18s}
+.cmp{display:flex;align-items:center;gap:44px}
+.cmp>*{display:flex;align-items:center;gap:6px}
+.cov{width:22px;height:22px;border-radius:7px;background:linear-gradient(135deg,#ff7a59,#7a5cff);flex:none}
+.cov.big{width:34px;height:34px;border-radius:9px}
+.av{width:22px;height:22px;border-radius:50%;background:#30d158;display:grid;place-items:center;font-weight:600;color:#000;font-size:12px;flex:none}
+.sub{color:#9aa1ae;font-size:12px}
+.tx{max-width:300px;overflow:hidden;text-overflow:ellipsis}
+.num{min-width:34px;text-align:right;font-variant-numeric:tabular-nums}
+.eq{display:flex;gap:2px;align-items:flex-end;height:14px}
+.eq i{width:3px;background:#30d158;border-radius:2px;animation:eq .8s ease-in-out infinite}
+.eq i:nth-child(2){animation-delay:.2s}.eq i:nth-child(3){animation-delay:.4s}
+@keyframes eq{0%,100%{height:4px}50%{height:14px}}
+.bar{width:110px;height:5px;border-radius:3px;background:#2a2d34;overflow:hidden}
+.bar b{display:block;height:100%;background:#0a84ff;border-radius:3px}
+.warn{color:#ff9f0a}
+.ring{width:18px;height:18px;border-radius:50%}
+@media (prefers-reduced-motion:reduce){.isl,.isl.up{transition-duration:.01s}.eq i{animation:none;height:9px}}
